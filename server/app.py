@@ -68,3 +68,6 @@ def listing():
         with sql.connect('database.db') as db:
             urls = db.execute('SELECT n_url, o_url FROM USERS WHERE u_name = (?)', (name,))
         return render_template('listing.html', urls=urls, name=name)
+
+if __name__ == '__main__':
+   app.run()
